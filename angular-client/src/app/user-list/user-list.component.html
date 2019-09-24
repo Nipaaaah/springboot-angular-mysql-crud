@@ -1,0 +1,29 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Mail</th>
+            
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.prenom }}</td>
+            <td>{{ user.nom }}</td>
+            <td>{{ user.mail }}</td>
+            <td class="buttons">
+              <button (click)="deleteUser(user)" class=" btn btn-danger pull-right">Delete</button>
+              <button (click)="editUser(user)" class="btn btn-warning pull-right">Edit User</button>
+              <button (click)="findUser(user.id)" class="btn btn-info pull-right">More Info</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

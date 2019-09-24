@@ -1,0 +1,45 @@
+package com.thomas.springbootangular.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.thomas.springbootangular.models.User;
+
+@Repository
+public class UserDAOImpl implements UserDAO {
+
+	public static List<User> users = new ArrayList<>();
+	static {
+		users.add(new User(1, new String("Toto"), "toto@toto.com"));
+		users.add(new User(2, new String("Tata"), "tata@tata.com"));
+		users.add(new User(3, new String("Titi"), "titi@titi.com"));
+	}
+	
+	
+	@Override
+	public List<User> findAll() {
+		return users;
+	}
+
+	@Override
+	public User UserFindById(int id) {
+		for (User user : users) {
+			if(user.getId() == id) {
+				return user;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public User UserSave(User user) {
+		users.add(user);
+		return user;
+		
+	}
+	
+
+	
+}

@@ -1,0 +1,5 @@
+package com.thomas.springbootangular.dao;
+
+public interface UserDAO {
+
+}

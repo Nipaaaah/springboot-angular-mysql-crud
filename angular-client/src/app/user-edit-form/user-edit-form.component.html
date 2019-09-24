@@ -1,0 +1,44 @@
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Edit User</h2>
+
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+      <div class="hidden">
+        <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+      </div>
+
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" formControlName="nom" placeholder="nom" name="nom" class="form-control" id="nom">
+      </div>
+  
+      <div class="form-group">
+          <label for="prenom">Prénom:</label>
+          <input type="text" formControlName="prenom" placeholder="prenom" name="prenom" class="form-control" id="prenom">
+        </div>
+
+      <div class="form-group">
+        <label for="mail">Mail:</label>
+        <input formControlName="mail" placeholder="Mail" name="mail" class="form-control" id="mail">
+      </div>
+
+      <mat-form-field class="form-group">
+        <label for="age">Âge:</label>
+        <input matInput [matDatepicker]="picker" class="form-control" id="age" name="age">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+       
+      <div class="form-group">
+          <label for="adresse">Adresse:</label>
+          <input type="text" formControlName="adresse" placeholder="adresse" name="adresse" class="form-control" id="adresse">
+      </div>    
+
+      <div class="form-group">
+          <label for="adresse">Téléphone:</label>
+          <input type="text" formControlName="telephone" placeholder="telephone" name="telephone" class="form-control" id="telephone">
+      </div>
+
+      <button class="btn btn-success">Update</button>
+    </form>
+  </div>

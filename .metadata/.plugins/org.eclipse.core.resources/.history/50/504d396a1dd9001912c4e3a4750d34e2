@@ -1,0 +1,9 @@
+package com.thomas.springbootangular.models;
+
+public class User {
+	
+	private int id;
+	private String nom;
+	private String mail;
+
+}

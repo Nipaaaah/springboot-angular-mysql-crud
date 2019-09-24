@@ -1,0 +1,14 @@
+package com.thomas.springbootangular.dao;
+
+import java.util.List;
+import com.thomas.springbootangular.models.User;
+
+public interface UserDAO {
+	
+	public List<User>findAll();
+	
+	public void UserFindById(int id);
+	
+	public void UserSave(User user);
+
+}

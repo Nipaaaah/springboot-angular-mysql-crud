@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3 class="pull-right">{{ user.mail }}</h3>
+    <h2>{{ user.prenom }} {{ user.nom }}</h2>
+    <p> &nbsp; </p>
+    <h4>Né(e) le : {{ user.age | date : short }}</h4>
+    <h4>Adresse : {{user.adresse}} </h4>
+    <h4>Téléphone : {{user.telephone}}</h4>
+
+    <button class="btn btn-default" (click)="onBack()">Retour</button>
+  </div>
+</div>
