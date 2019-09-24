@@ -1,13 +1,10 @@
-body{
-    background-color: 
-}
 
-.row{
-    border: 2px black solid; 
-    border-radius: 5px;
+
+.container{
     padding: 15px;
+    background-color: #d8c3a5; 
 }
 
 .btn{
-    margin-top: 3%;
+    margin-top: 5%;
 }

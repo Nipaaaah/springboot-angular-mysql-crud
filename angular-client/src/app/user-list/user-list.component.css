@@ -1,7 +1,31 @@
-.buttons{
-    width:25%;
+table {
+    border: 0px;
+}
+.thead{
+    color: #E85A4F; 
+    border: 0px;
+}
+
+th{
+    border: none; 
+}
+
+td{
+    border-bottom: 1px #818d92 solid; 
+}
+
+tbody{
+    background-color: #d8c3a5; 
+    color: #353534; 
 }
 
 .buttons .btn {
     margin-right: 10px;
+}
+
+.fas{
+    border: none;
+    color: #353534; 
+    margin-right: 20px;
+    
 }

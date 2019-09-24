@@ -36,7 +36,10 @@ export class UserEditFormComponent implements OnInit {
       telephone: ['', Validators.required],   
     }); 
 
+    
+
     this.userService.findUser(+userId).subscribe( data => {
+      console.log(data.age);
       this.editForm.setValue({
         id: userId, 
         nom: data.nom, 

@@ -1,6 +1,16 @@
-ul{
-    margin-top: 2%;
-    margin-bottom: 5%;
+.card{
+    background-color: #EAE7DC; 
+    border: 0px;
+}
+
+.btn{
+    background-color: #d8c3a5; 
+    border-radius: 0px;
+    color: white; 
+}
+
+.card-title{
+    color: #E85A4F; 
 }
 
 a{

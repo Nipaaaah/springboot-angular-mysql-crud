@@ -4,7 +4,7 @@ export class User {
     nom: string;
     prenom: string; 
     mail: string;
-    age: string; 
+    age: Date; 
     adresse: string; 
     telephone: string; 
 

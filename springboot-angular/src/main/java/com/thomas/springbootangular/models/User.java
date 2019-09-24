@@ -1,5 +1,7 @@
 package com.thomas.springbootangular.models;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +16,7 @@ public class User {
 	private String nom;
 	private String mail;
 	private String prenom;
-	private String age; 
+	private Date age; 
 	private String adresse; 
 	private String telephone; 
 	
@@ -59,11 +61,11 @@ public class User {
 		this.prenom = prenom;
 	}
 
-	public String getAge() {
+	public Date getAge() {
 		return age;
 	}
 
-	public void setAge(String age) {
+	public void setAge(Date age) {
 		this.age = age;
 	}
 

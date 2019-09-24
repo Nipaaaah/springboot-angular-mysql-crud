@@ -31,14 +31,24 @@
         </div>
 
         <!-- Âge -->
-        <mat-form-field class="form-group">
-          <label for="age">Âge*</label>
-          <input matInput [matDatepicker]="picker" [(ngModel)]="user.age"
-            class="form-control" id="age" name="age"
-            required #age="ngModel">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
+        <div class="form-group">
+          <label for="age">Date de naissance*</label>
+          <div class="input-group">
+            <input class="form-control" placeholder="dd/mm/yyyy" [minDate]="minDate"
+                   name="age" id="age" [(ngModel)]="user.age" ngbDatepicker #d="ngbDatepicker"
+                   required #age="ngModel">
+            <div class="inpt-group-append">
+              <i (click)="d.toggle()" type="button" class="fas fa-calendar-alt fa-2x pull-right"></i> 
+            </div>
+          </div>
+
+            <!-- 
+            <label for="age">Âge*</label>
+            <input type="text" ngbDatepicker [(ngModel)]="user.age"
+              class="form-control" id="age" name="age"
+              required #age="ngModel" />
+            -->
+        </div>
             
         <!-- Adresse -->
         <div class="form-group">

@@ -15,6 +15,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule, NgbDateAdapter, NgbDateStruct, NgbDateNativeAdapter } from '@ng-bootstrap/ng-bootstrap'; 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; 
 
 
 @NgModule({
@@ -35,9 +37,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatNativeDateModule, 
     MatFormFieldModule,
     MatInputModule, 
-    BrowserAnimationsModule
+    BrowserAnimationsModule, 
+    NgbModule, 
+    FontAwesomeModule
   ],
-  providers: [UserServiceService],
+  providers: [UserServiceService, {provide: NgbDateAdapter, useClass: NgbDateNativeAdapter}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
