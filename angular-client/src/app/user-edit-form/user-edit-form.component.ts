@@ -18,7 +18,6 @@ export class UserEditFormComponent implements OnInit {
 
   ngOnInit() {
     let userId = window.localStorage.getItem("editUserId");
-    console.log(window.localStorage.getItem("editUserId"));
 
     if(!userId) {
       alert("Invalid action")
@@ -39,7 +38,7 @@ export class UserEditFormComponent implements OnInit {
     
 
     this.userService.findUser(+userId).subscribe( data => {
-      console.log(data.age);
+      console.log("Date naissance: " + data.age);
       this.editForm.setValue({
         id: userId, 
         nom: data.nom, 

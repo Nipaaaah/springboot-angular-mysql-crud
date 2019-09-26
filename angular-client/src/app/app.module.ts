@@ -1,23 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
+import { UserServiceService } from './services/user-service.service';
+
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
-import { UserServiceService } from './services/user-service.service';
-import { HttpClientModule } from '@angular/common/http';
 import { UserFormComponent } from './user-form/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserEditFormComponent } from './user-edit-form/user-edit-form.component';
-import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material'; 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule, NgbDateAdapter, NgbDateStruct, NgbDateNativeAdapter } from '@ng-bootstrap/ng-bootstrap'; 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; 
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule, NgbDateAdapter, NgbDateNativeAdapter,  NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; 
+import { registerLocaleData } from '@angular/common'; 
+import localeFr from '@angular/common/locales/fr';
+import { MaterialModule } from './modules/material/material.module';
+
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
@@ -25,23 +27,26 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     UserListComponent,
     UserFormComponent,
     UserDetailsComponent,
-    UserEditFormComponent
+    UserEditFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule, 
+    BrowserAnimationsModule, 
     FormsModule, 
     ReactiveFormsModule, 
-    MatDatepickerModule, 
-    MatNativeDateModule, 
-    MatFormFieldModule,
-    MatInputModule, 
-    BrowserAnimationsModule, 
+    MaterialModule, 
+
     NgbModule, 
-    FontAwesomeModule
+    FontAwesomeModule, 
+    ReactiveFormsModule, 
+    NgbPaginationModule
+   
   ],
   providers: [UserServiceService, {provide: NgbDateAdapter, useClass: NgbDateNativeAdapter}],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+   
+}

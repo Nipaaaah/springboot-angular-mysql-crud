@@ -5,9 +5,9 @@
       <thead class="thead">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Prénom</th>
-          <th scope="col">Nom</th>
-          <th scope="col">Mail</th>
+          <th scope="col" sortable="prenom" >Prénom</th>
+          <th scope="col" sortable="nom" >Nom</th>
+          <th scope="col" sortable="age" >Mail</th>
         </tr>
       </thead>
 
@@ -18,11 +18,18 @@
            <td>{{ user.nom }}</td>
            <td>{{ user.mail }}</td>
            <td class="buttons">
-              <i (click)="deleteUser(user)" type="button" class="fas fa-trash fa-2x pull-right"></i> 
-              <i (click)="editUser(user)"  type="button" class="fas fa-edit fa-2x pull-right"></i>
-              <i (click)="findUser(user.id)" type="button" class="fas fa-info-circle fa-2x pull-right"></i>    
+              <button mat-icon-button (click)="findUser(user.id)">
+                  <mat-icon>info</mat-icon>
+              </button> 
+            
+              <button mat-icon-button (click)="editUser(user)">
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-icon-button (click)="deleteUser(user)">
+                <mat-icon>delete</mat-icon>
+              </button>
            </td>
          </tr>
      </tbody>
     </table>
-  </div>

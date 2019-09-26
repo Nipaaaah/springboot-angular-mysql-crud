@@ -15,17 +15,15 @@ td{
 }
 
 tbody{
-    background-color: #d8c3a5; 
+    background-color: #e7d5bb; 
     color: #353534; 
+
 }
 
-.buttons .btn {
-    margin-right: 10px;
+.buttons button {
+    margin-right: 15px;
 }
 
-.fas{
-    border: none;
-    color: #353534; 
-    margin-right: 20px;
-    
+mat-icon{
+    font-size: 36px;
 }
